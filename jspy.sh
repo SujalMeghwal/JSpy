@@ -4,6 +4,7 @@ range=$1
 # Create directories for storing output
 make-dir(){
     for domain in $(cat $range); do
+        mkdir -p "$domain"
         mkdir -p "$domain/Recon"
         mkdir -p "$domain/Recon/JS"
         mkdir -p "$domain/Recon/JS/Headers"
