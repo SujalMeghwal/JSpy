@@ -65,7 +65,7 @@ Usage: nmap [Scan Type(s)] [Options] {target specification}
 ┌──(root㉿kali)-[~/JSpy]
 └─# mkdir kiwi.com
 ┌──(root㉿kali)-[~/JSpy]
-└─# mv /root/Target/alive.com /root/JSpy/
+└─# mv /root/Target/alive.com /root/JSpy/kiwi.com/
 ┌──(root㉿kali)-[~/JSpy]
 └─# bash jspy.sh scope.txt
 ````
