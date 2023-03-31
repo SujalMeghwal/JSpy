@@ -8,7 +8,7 @@ This script performs reconnaissance on a list of domains. It creates directories
 └─# cat scope.txt
 kiwi.com
 ````
-2. Make a directory in root user name it Tools and download relative-url-extractor
+2. Make a directory in root user name it Tools and download relative-url-extractor in it 
  ```bash 
 ┌──(root㉿kali)-[~/path/to/directory]
 └─# mkdir /root/Tool/ && cd /root/Tool/ && git clone https://github.com/jobertabma/relative-url-extractor.git
