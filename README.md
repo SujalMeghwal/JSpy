@@ -1,7 +1,7 @@
 # JSpy
 This script performs reconnaissance on a list of domains. It creates directories for storing output, extracts headers and response bodies from each domain, extracts script endpoints and downloads scripts, extracts relative URLs from scripts, and runs nmap scans on each domain.
 
-## requirement and How SETUP IT 
+## Requirement and How SETUP IT 
 1. Make file name `scope.txt` that file contaiin single main domain your tagert
 ```bash 
 ┌──(root㉿kali)-[~/path/to/directory]
