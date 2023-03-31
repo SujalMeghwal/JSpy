@@ -35,7 +35,7 @@ Extract-Header(){
             printf "Getting headers for ${GREEN}$x${NC}...\n"
             curl -sSf -X GET -H "X-Forwarded-For: evil.com" "$x" -I > "$domain/Recon/JS/Headers/$NAME"
             if [ $? -ne 0 ]; then
-                printf "${ORED}Failed to get headers for $x.${NC}\n"
+                printf "${RED}Failed to get headers for $x.${NC}\n"
                 continue
             fi
 
@@ -43,7 +43,7 @@ Extract-Header(){
             printf "Getting response body for ${GREEN}$x${NC}...\n"
             curl -sSf -X GET -H "X-Forwarded-For: evil.com" -L "$x" > "$domain/Recon/JS/Response-Body/$NAME"
             if [ $? -ne 0 ]; then
-                printf "${ORED}Failed to get response body for $x.${NC}\n"
+                printf "${RED}Failed to get response body for $x.${NC}\n"
                 continue
             fi
 
@@ -52,7 +52,6 @@ Extract-Header(){
     done
 }
 Extract-Header
-
 # Extract script endpoints and download scripts
 extract-exd(){
     for domain in $(cat $range); do
@@ -78,4 +77,36 @@ extract-exd(){
     done
 }
 extract-exd
+extract-js() {
+    set -e # exit immediately if any command fails
+    for domain in $(cat $range); do
+        for x in $(cat "$domain/alive.txt"); do
+            # Extract domain name from URL
+            NAME=$(echo $x | awk -F/ '{print $3}')
 
+            # Create directory for storing output
+            mkdir -p "$domain/Recon/JS/Endpoints/$NAME"
+
+            # Extract relative URLs from scripts and save to file
+            printf "\n\e[32m[+] Extracting endpoints from scripts for $NAME\e[0m\n"
+            for file in $(ls "$domain/Recon/JS/Scripts-Response/$NAME"); do
+            cat "$domain/Recon/JS/Scripts-Response/$NAME/$file" | /root/Tool/relative-url-extractor/extract.rb  >> "$domain/Recon/JS/Endpoints/$NAME/$file"
+            
+            # Remove Empty directory   
+            find "$domain/Recon/JS/Endpoints/" -depth -type d -empty -exec rmdir {} \;
+            done
+        done
+    done
+}
+extract-js
+# Run nmap scan on the domains
+scan-nmap(){
+    for domain in $(cat $range); do
+        for x in $(cat "$domain/alive.txt"); do
+            NAME=$(echo $x | awk -F/ '{print $3}')
+            # Run nmap scan on the domain and save output to file
+            nmap -sC -sV $NAME | tee $domain/Recon/Scan/Nmap-scans/$NAME
+        done
+    done
+}
+scan-nmap
