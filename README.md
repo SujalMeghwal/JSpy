@@ -44,8 +44,6 @@ kiwi.com
 ┌──(root㉿kali)-[~/path/to/directory]
 └─# mv alive.txt /root/kiwi.com/
 kiwi.com
-┌──(root㉿kali)-[~/path/to/directory]
-└─# mkdir kiwi.com
 ````
 7.  Make sure you have Nmap installed on your system. You can check if nmap is installed by running that command in your terminal:
 ````bash
