@@ -23,7 +23,7 @@ Resolving deltas: 100% (11/11), done.
 ┌──(root㉿kali)-[~/path/to/directory]
 └─# bash --version
 ````
-4. You must have alive.txt which conatain the domain of your tagret also in urls form 
+4. You must have alive.txt which conatain the sub-domains of your tagret in url form 
 ````bash
 ┌──(root㉿kali)-[~/path/to/directory]
 └─# cat alive.txt 
@@ -31,7 +31,7 @@ https://abaviaiton.kiwi.com
 https://governorsaviation.kiwi.com
 http://governorsaviation.kiwi.com
 ````
-5. Make a Folder which name be same as scope.txt domain name : for example i will take `kiwi.com` domain
+5. Make a Folder name it same as scope.txt domain name
 ````bash
 ┌──(root㉿kali)-[~/path/to/directory]
 └─# cat scope.txt
@@ -43,7 +43,6 @@ kiwi.com
 ````bash
 ┌──(root㉿kali)-[~/path/to/directory]
 └─# mv alive.txt /root/kiwi.com/
-kiwi.com
 ````
 7.  Make sure you have Nmap installed on your system. You can check if nmap is installed by running that command in your terminal:
 ````bash
@@ -79,7 +78,7 @@ root@ubuntu:~/example.com$ ./search.sh -h
 -n (string) - search nmap scans
 -h - help
 ````
-> Move this `DataHound.sh` script in `JS` Folder if target
+> Move this `DataHound.sh` script in `JS` Folder of Target
 
 ### Examples to use  Datahound script
 ````bash
