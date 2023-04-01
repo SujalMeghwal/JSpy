@@ -49,7 +49,7 @@ searchjs() {
     for domain in $(ls Scripts-Response); do
         for file in $(ls Scripts-Response/$domain); do
             echo -e "\n${BOLD}${YELLOW}${domain}/${file}${NORMAL}"
-            RES=$(grep --color=always -E "${WORD}" Scripts-Response/$domain/$file)
+            RES=$(cat Scripts-Response/$domain/$file | js-beautify | grep --color=always -E "${WORD}")
             if [ $(echo $RES | wc -c) -le 1 ]; then
                 echo -e "${BOLD}${RED}No results found${NORMAL}"
             else
@@ -58,6 +58,7 @@ searchjs() {
         done
     done
 }
+
 
 # function to search for expressions in nmap scans
 searchnmap() {
