@@ -1,5 +1,11 @@
 # JSpy
-This script performs reconnaissance on a list of domains. It creates directories for storing output, extracts headers and response bodies from each domain, extracts script endpoints and downloads scripts, extracts relative URLs from scripts, and runs nmap scans on each domain.
+JSpy is a powerful reconnaissance tool designed to automate the process of gathering information about a list of domains. It creates output directories for each domain, extracts headers and response bodies, script endpoints and relative URLs, and runs nmap scans. Whether you're a bug bounty hunter, pen tester, or security researcher, JSpy is an essential tool for any reconnaissance mission. With JSpy, you can save time and increase your chances of finding vulnerabilities in your target domains.
+
+🚀 Features:
+* Extracts headers and response bodies
+* Extracts script endpoints and downloads scripts
+* Extracts relative URLs from scripts
+* Runs nmap scans on each domain
 
 ## Requirement and How SETUP IT 
 1. Make file name `scope.txt` that file contaiin single main domain your tagert
