@@ -86,6 +86,7 @@ $ ./search.sh -x "nginx"          # search for "nginx" in header files
 $ ./search.sh -e "s3.amazonaws"   # search for "s3.amazonaws" in HTML files
 $ ./search.sh -n "ssh"            # search Nmap scans for the string "ssh"
 ````
-<a href="https://www.buymeacoffee.com/SecuritySphinx" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+> Thanks for visiting my repository! If you find my work useful, please consider buying me a coffee to support my future projects.
 
+<a href="https://www.buymeacoffee.com/SecuritySphinx" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
