@@ -52,7 +52,7 @@ bash jspy.sh scope.txt
 DataHound is a powerful post-recon search tool. It recursively scans recon output (JS, HTML, headers, and Nmap scans) to uncover interesting strings and keywords.
 ## 🔧 Usage
 ```bash
-./search.sh [options]
+./DataHound.sh [options]
 ```
 ## 🔍 Options
 ```bash
@@ -64,12 +64,12 @@ DataHound is a powerful post-recon search tool. It recursively scans recon outpu
 ```
 ## 🧪 Examples
 ```bash
-./search.sh -j "admin"          # Find "admin" in JS files  
-./search.sh -x "nginx"          # Look for "nginx" in headers  
-./search.sh -e "s3.amazonaws"   # Identify S3 links in HTML  
-./search.sh -n "ssh"            # Locate SSH ports in Nmap scans
+./DataHound.sh -j "admin"          # Find "admin" in JS files  
+./DataHound.sh -x "nginx"          # Look for "nginx" in headers  
+./DataHound.sh -e "s3.amazonaws"   # Identify S3 links in HTML  
+./DataHound.sh -n "ssh"            # Locate SSH ports in Nmap scans
 ```
-💡 Place `search.sh` inside the target's JS folder for scoped analysis.
+💡 Place `DataHound.sh` inside the target's JS folder for scoped analysis.
 ## 🧰 Future Enhancements
 - Add parallel execution with GNU Parallel for faster scans
 - Include output in JSON for structured parsing
